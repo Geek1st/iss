@@ -1,2 +1,2 @@
 # iss
-ä¸€ä¸ªèŽ·å–issçš„ç®€å•åº”ç”¨
+Ò»¸ö¼òµ¥µÄjavaÓ¦ÓÃ£¬´Óishadowsocks.orgÉÏ»ñÈ¡ÊµÑéÕËºÅ£¬ÎÞÐèÃ¿´Î´ò¿ªä¯ÀÀÆ÷¼´¿É»ñÈ¡£¬ÈçÓÐÎÊÌâÇëÁªÏµ×÷Õß
