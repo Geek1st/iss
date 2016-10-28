@@ -17,29 +17,33 @@ public class Program
 
 		BufferedReader reader = new BufferedReader(new InputStreamReader(iss.openStream(), StandardCharsets.UTF_8));
 		
+		String tagPath = FileSystemView.getFileSystemView().getHomeDirectory() + "\\shadowsocks.txt";
+		
 		String line = new String();
-		FileWriter fileWriter = new FileWriter(FileSystemView.getFileSystemView().getHomeDirectory() + "\\shadowsocks.txt");
+		FileWriter fileWriter = new FileWriter(tagPath);
+		
 		while ((line = reader.readLine()) != null)
 		{
-			System.out.println(line);
-			if (line.indexOf("·þÎñÆ÷µØÖ·:") > 0)
+			if (0 < line.indexOf("æœåŠ¡å™¨åœ°å€:"))
 			{
 				fileWriter.append(line.substring(line.indexOf("<h4>") + 4, line.indexOf("</h4>")));
-				fileWriter.append("\n");
-				System.out.println(line.substring(line.indexOf("<h4>") + 4, line.indexOf("</h4>")));
+				fileWriter.append(System.getProperty("line.separator"));
 			}
-			else if(line.indexOf("¶Ë¿Ú:") > 0)
+			else if(0 < line.indexOf("ç«¯å£:"))
 			{
 				fileWriter.append(line.substring(line.indexOf("<h4>") + 4, line.indexOf("</h4>")));
-				fileWriter.append("\n");
+				fileWriter.append(System.getProperty("line.separator"));
 			}
-			else if(line.indexOf("ÃÜÂë:") > 0)
+			else if(0 < line.indexOf("å¯†ç :"))
 			{
 				fileWriter.append(line.substring(line.indexOf("<h4>") + 4, line.indexOf("</h4>")));
-				fileWriter.append("\n\n");
+				fileWriter.append(System.getProperty("line.separator") + System.getProperty("line.separator"));
 			}
 		}
+		
 		fileWriter.close();
 		reader.close();
+		
+		Runtime.getRuntime().exec("notepad " + tagPath);
 	}
 }
